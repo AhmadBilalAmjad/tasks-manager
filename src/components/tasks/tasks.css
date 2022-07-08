@@ -16,3 +16,17 @@
   margin-right: 1.5rem;
 }
 /* Tasks Container END */
+
+/* Add Edit Modal START */
+.priority-group {
+  display: flex !important;
+  justify-content: space-between;
+  padding: 0 1rem !important;
+}
+.submit-button-item {
+  text-align: center;
+}
+.submit-button-item > button {
+  width: 10rem;
+}
+/* Add Edit Modal END */

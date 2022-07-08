@@ -3,6 +3,7 @@ import { Affix, Button, Layout, List, Typography } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
 
 import Task from './Task';
+import AddEditModal from './Task/AddEditModal';
 import { useTaskContext } from '../../context/TaskContext';
 import { TTask } from '../../types/task';
 
@@ -24,6 +25,15 @@ const Tasks = () => {
 
   const handleAddTaskClick = () => setIsAddEditTaskModalOpen(true);
 
+  const handleToggleVisible = (status: boolean) => {
+    if (selectedTask) {
+      setSelectedTask(undefined);
+    }
+    if (isAddEditTaskModalOpen) {
+      setIsAddEditTaskModalOpen(status);
+    }
+  };
+
   return (
     <>
       <Content className='task-container'>
@@ -42,6 +52,7 @@ const Tasks = () => {
                 key={task.id}
                 task={task}
                 setSelectedTask={setSelectedTask}
+                setIsAddEditTaskModalOpen={setIsAddEditTaskModalOpen}
               />
             )}
           />
@@ -67,6 +78,11 @@ const Tasks = () => {
           />
         </Affix>
       )}
+      <AddEditModal
+        visible={isAddEditTaskModalOpen}
+        task={selectedTask}
+        toggleVisible={handleToggleVisible}
+      />
     </>
   );
 };

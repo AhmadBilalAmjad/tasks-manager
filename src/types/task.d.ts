@@ -18,4 +18,18 @@ export type TTask = {
 export type TTaskComponent = {
   task: TTask;
   setSelectedTask?: SetStateAction<TTask>;
+  setIsAddEditTaskModalOpen?: SetStateAction<TTask>;
+};
+
+export type TAddEditForm = {
+  title: string;
+  description: string;
+  kpis: string;
+  priority: 'high' | 'medium' | 'low';
+};
+
+export type TTaskModal = {
+  task?: TTask | undefined;
+  visible: boolean;
+  toggleVisible: SetStateAction<boolean>;
 };

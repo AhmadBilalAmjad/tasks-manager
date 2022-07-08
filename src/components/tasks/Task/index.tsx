@@ -8,12 +8,18 @@ import './task.css';
 
 const { Item } = List;
 
-const Task: React.FC<TTaskComponent> = ({ task, setSelectedTask }) => {
+const Task: React.FC<TTaskComponent> = ({ task, setSelectedTask, setIsAddEditTaskModalOpen }) => {
   const { handleCompleteTask } = useTaskContext();
 
   const handleDoneTaskClick = () => {
     handleCompleteTask(task.id);
     message.success('Task Status Changed Successfully!!!', 1);
+  };
+
+  const handleEditTaskClick = (event: React.MouseEvent<HTMLInputElement>) => {
+    event.stopPropagation();
+    setSelectedTask(task);
+    setIsAddEditTaskModalOpen(true);
   };
 
   return (
@@ -27,7 +33,7 @@ const Task: React.FC<TTaskComponent> = ({ task, setSelectedTask }) => {
           <Button
             size='small'
             type='primary'
-            onClick={() => setSelectedTask(task)}
+            onClick={handleEditTaskClick}
           >
             Edit Task
           </Button>
