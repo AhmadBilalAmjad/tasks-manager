@@ -1,5 +1,7 @@
+import TaskContextProvider from './context/TaskContext';
+
 const App = () => {
-  return <div className='App'>Task Manager</div>;
+  return <TaskContextProvider>Task Manager</TaskContextProvider>;
 };
 
 export default App;
