@@ -1,0 +1,30 @@
+li.task-list-item {
+  margin: 2rem;
+  padding: 1rem;
+  border: 1px solid #ccc !important;
+  position: relative;
+  border-radius: var(--list-border-radius);
+}
+
+.task-actions-wrapper {
+  display: grid;
+  row-gap: 1rem;
+  place-items: flex-end;
+}
+
+.task-actions-wrapper > div:first-child {
+  text-transform: capitalize;
+}
+
+span.task-badge {
+  margin-left: 0.5rem;
+}
+
+.task-badge > .ant-badge-status-dot {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.task-actions-wrapper > div:last-child > button:last-child {
+  margin-left: 0.5rem;
+}

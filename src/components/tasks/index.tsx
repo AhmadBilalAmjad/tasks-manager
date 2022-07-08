@@ -6,6 +6,8 @@ import Task from './Task';
 import { useTaskContext } from '../../context/TaskContext';
 import { TTask } from '../../types/task';
 
+import './tasks.css';
+
 const { Content } = Layout;
 const { Title } = Typography;
 

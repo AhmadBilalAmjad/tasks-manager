@@ -4,6 +4,8 @@ import { Badge, Button, List, message } from 'antd';
 import { TTaskComponent } from '../../../types/task';
 import { useTaskContext } from '../../../context/TaskContext';
 
+import './task.css';
+
 const { Item } = List;
 
 const Task: React.FC<TTaskComponent> = ({ task, setSelectedTask }) => {
