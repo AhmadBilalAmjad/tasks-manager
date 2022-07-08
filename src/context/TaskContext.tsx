@@ -16,24 +16,7 @@ export const useTaskContext = () => {
 const TaskContextProvider: React.FC<React.PropsWithChildren> = ({
   children,
 }) => {
-  const [tasks, setTasks] = useState<TTask[]>([
-    {
-      id: Math.random() * Math.random(),
-      title: 'title one',
-      description: 'desc one',
-      kpis: 'kpi one',
-      priority: 'low',
-      isCompleted: false,
-    },
-    {
-      id: Math.random() * Math.random(),
-      title: 'title two',
-      description: 'desc two',
-      kpis: 'kpi two',
-      priority: 'medium',
-      isCompleted: false,
-    },
-  ]);
+  const [tasks, setTasks] = useState<TTask[]>([]);
 
   const handleAddTask = (task: TTask) => {
     const newTask: TTask = {

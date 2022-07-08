@@ -3,12 +3,23 @@
   height: 100vh;
   padding: 2rem;
 }
+.task-manager-heading {
+  text-align: center;
+}
 .view-done-tasks-and-heading-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 58vw;
+  width: 50vw;
   padding-left: 2rem;
+  text-align: center;
+}
+.add-task-button-wrapper {
+  text-align: center;
+  margin-top: 40vh;
+}
+.add-task-button-wrapper > button {
+  width: 20rem;
 }
 .add-task-icon {
   float: right;

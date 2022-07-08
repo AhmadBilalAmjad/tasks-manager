@@ -29,10 +29,7 @@ const Tasks = () => {
 
   const handleAddTaskClick = () => setIsAddEditTaskModalOpen(true);
 
-  console.log({ selectedTask });
-
   const handleToggleVisible = (status: boolean) => {
-    console.log({ handleToggleVisible: selectedTask });
     if (selectedTask) {
       setSelectedTask(undefined);
     }
@@ -47,11 +44,24 @@ const Tasks = () => {
   return (
     <>
       <Content className='task-container'>
-        <div className='view-done-tasks-and-heading-wrapper'>
-          <Button type='primary' onClick={() => setIsDoneTasksModalOpen(true)}>
-            View Done Tasks
-          </Button>
-          <Title level={2}>Task Manager</Title>
+        <div
+          className={`${
+            !!tasks.length ? 'view-done-tasks-and-heading-wrapper' : ''
+          }`}
+        >
+          {!!tasks.length && (
+            <div>
+              <Button
+                type='primary'
+                onClick={() => setIsDoneTasksModalOpen(true)}
+              >
+                View Done Tasks
+              </Button>
+            </div>
+          )}
+          <Title level={2} className='task-manager-heading'>
+            Task Manager
+          </Title>
         </div>
         {!!tasks.length ? (
           <List
@@ -68,13 +78,11 @@ const Tasks = () => {
             )}
           />
         ) : (
-          <Button
-            type='primary'
-            size='large'
-            onClick={() => handleAddTaskClick}
-          >
-            Add Task
-          </Button>
+          <div className='add-task-button-wrapper'>
+            <Button type='primary' size='large' onClick={handleAddTaskClick}>
+              Create Your First Task ;)
+            </Button>
+          </div>
         )}
       </Content>
       {!!tasks.length && (
