@@ -6,6 +6,10 @@ li.task-list-item {
   border-radius: var(--list-border-radius);
 }
 
+li.normal-border {
+  border-radius: 0;
+}
+
 .task-actions-wrapper {
   display: grid;
   row-gap: 1rem;

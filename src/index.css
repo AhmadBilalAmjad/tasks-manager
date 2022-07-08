@@ -1,0 +1,17 @@
+:root {
+  --modal-border-radius: 2.5rem;
+  --button-border-radius: 0.4rem;
+  --list-border-radius: 1rem;
+}
+
+.ant-modal > .ant-modal-content {
+  border-radius: var(--modal-border-radius);
+}
+.ant-modal > .ant-modal-content > .ant-modal-header {
+  border-top-left-radius: var(--modal-border-radius);
+  border-top-right-radius: var(--modal-border-radius);
+}
+
+button {
+  border-radius: var(--button-border-radius) !important;
+}

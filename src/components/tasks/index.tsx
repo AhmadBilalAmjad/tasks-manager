@@ -4,6 +4,7 @@ import { PlusOutlined } from '@ant-design/icons';
 
 import Task from './Task';
 import AddEditModal from './Task/AddEditModal';
+import CompletedTasksModal from './CompletedModal';
 import { useTaskContext } from '../../context/TaskContext';
 import { TTask } from '../../types/task';
 
@@ -82,6 +83,10 @@ const Tasks = () => {
         visible={isAddEditTaskModalOpen}
         task={selectedTask}
         toggleVisible={handleToggleVisible}
+      />
+      <CompletedTasksModal
+        visible={isDoneTasksModalOpen}
+        toggleVisible={setIsDoneTasksModalOpen}
       />
     </>
   );

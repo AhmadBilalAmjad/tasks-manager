@@ -8,7 +8,12 @@ import './task.css';
 
 const { Item } = List;
 
-const Task: React.FC<TTaskComponent> = ({ task, setSelectedTask, setIsAddEditTaskModalOpen }) => {
+const Task: React.FC<TTaskComponent> = ({
+  task,
+  setSelectedTask,
+  setIsAddEditTaskModalOpen,
+  fromCompleteTasksModal,
+}) => {
   const { handleCompleteTask } = useTaskContext();
 
   const handleDoneTaskClick = () => {
@@ -23,18 +28,18 @@ const Task: React.FC<TTaskComponent> = ({ task, setSelectedTask, setIsAddEditTas
   };
 
   return (
-    <Item className='task-list-item'>
+    <Item
+      className={`task-list-item${
+        fromCompleteTasksModal ? ' normal-border' : ''
+      }`}
+    >
       <Item.Meta title={task.title} description={task.description} />
       <div className='task-actions-wrapper'>
         <div>
           {task.priority} <Badge status='error' className='task-badge' />
         </div>
         <div>
-          <Button
-            size='small'
-            type='primary'
-            onClick={handleEditTaskClick}
-          >
+          <Button size='small' type='primary' onClick={handleEditTaskClick}>
             Edit Task
           </Button>
           <Button size='small' type='primary' onClick={handleDoneTaskClick}>

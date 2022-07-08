@@ -30,3 +30,9 @@
   width: 10rem;
 }
 /* Add Edit Modal END */
+
+/* Completed Tasks Modal START  */
+.no-tasks-done {
+  text-align: center;
+}
+/* Completed Tasks Modal END */

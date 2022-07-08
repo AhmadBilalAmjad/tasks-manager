@@ -19,6 +19,7 @@ export type TTaskComponent = {
   task: TTask;
   setSelectedTask?: SetStateAction<TTask>;
   setIsAddEditTaskModalOpen?: SetStateAction<TTask>;
+  fromCompleteTasksModal?: boolean;
 };
 
 export type TAddEditForm = {
