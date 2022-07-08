@@ -22,6 +22,8 @@ const AddEditModal: React.FC<TTaskModal> = ({
     form.setFieldsValue({
       ...task,
     });
+  } else {
+    form.resetFields();
   }
 
   const handleFinish = (updatedTask: TAddEditForm) => {

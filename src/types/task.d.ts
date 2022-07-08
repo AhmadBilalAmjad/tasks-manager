@@ -15,13 +15,6 @@ export type TTask = {
   isCompleted: boolean;
 };
 
-export type TTaskComponent = {
-  task: TTask;
-  setSelectedTask?: SetStateAction<TTask>;
-  setIsAddEditTaskModalOpen?: SetStateAction<TTask>;
-  fromCompleteTasksModal?: boolean;
-};
-
 export type TAddEditForm = {
   title: string;
   description: string;
@@ -29,8 +22,18 @@ export type TAddEditForm = {
   priority: 'high' | 'medium' | 'low';
 };
 
+export type TTaskComponent = {
+  task: TTask;
+  setSelectedTask?: SetStateAction<TTask>;
+  fromCompleteTasksModal?: boolean;
+  setIsViewTaskModalOpen?: SetStateAction<TTask>;
+  setIsAddEditTaskModalOpen?: SetStateAction<TTask>;
+};
+
 export type TTaskModal = {
   task?: TTask | undefined;
   visible: boolean;
   toggleVisible: SetStateAction<boolean>;
+  setSelectedTask?: SetStateAction<TTask>;
+  setIsAddEditTaskModalOpen?: SetStateAction<TTask>;
 };

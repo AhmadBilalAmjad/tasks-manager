@@ -5,6 +5,7 @@ import { PlusOutlined } from '@ant-design/icons';
 import Task from './Task';
 import AddEditModal from './Task/AddEditModal';
 import CompletedTasksModal from './CompletedModal';
+import ViewTaskModal from './Task/ViewModal';
 import { useTaskContext } from '../../context/TaskContext';
 import { TTask } from '../../types/task';
 
@@ -23,15 +24,23 @@ const Tasks = () => {
   );
   const [isDoneTasksModalOpen, setIsDoneTasksModalOpen] =
     useState<boolean>(false);
+  const [isViewTaskModalOpen, setIsViewTaskModalOpen] =
+    useState<boolean>(false);
 
   const handleAddTaskClick = () => setIsAddEditTaskModalOpen(true);
 
+  console.log({ selectedTask });
+
   const handleToggleVisible = (status: boolean) => {
+    console.log({ handleToggleVisible: selectedTask });
     if (selectedTask) {
       setSelectedTask(undefined);
     }
     if (isAddEditTaskModalOpen) {
       setIsAddEditTaskModalOpen(status);
+    }
+    if (isViewTaskModalOpen) {
+      setIsViewTaskModalOpen(status);
     }
   };
 
@@ -53,6 +62,7 @@ const Tasks = () => {
                 key={task.id}
                 task={task}
                 setSelectedTask={setSelectedTask}
+                setIsViewTaskModalOpen={setIsViewTaskModalOpen}
                 setIsAddEditTaskModalOpen={setIsAddEditTaskModalOpen}
               />
             )}
@@ -87,6 +97,13 @@ const Tasks = () => {
       <CompletedTasksModal
         visible={isDoneTasksModalOpen}
         toggleVisible={setIsDoneTasksModalOpen}
+      />
+      <ViewTaskModal
+        visible={isViewTaskModalOpen}
+        task={selectedTask}
+        toggleVisible={handleToggleVisible}
+        setSelectedTask={setSelectedTask}
+        setIsAddEditTaskModalOpen={setIsAddEditTaskModalOpen}
       />
     </>
   );

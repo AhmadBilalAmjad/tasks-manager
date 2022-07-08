@@ -2,7 +2,6 @@
 .task-container {
   height: 100vh;
   padding: 2rem;
-  overflow: auto;
 }
 .view-done-tasks-and-heading-wrapper {
   display: flex;
@@ -36,3 +35,41 @@
   text-align: center;
 }
 /* Completed Tasks Modal END */
+
+/* View Task Modal START  */
+.task-badge-and-title-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+  padding-left: 2rem;
+}
+.task-badge-and-title-wrapper > div:first-child {
+  text-transform: capitalize;
+}
+.task-badge-in-view-modal > .ant-badge-status-dot {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.description-view-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+}
+.description-view-modal > span {
+  width: 50%;
+}
+.buttons-wrapper-view-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+}
+.buttons-wrapper-view-modal > button {
+  width: 10rem;
+}
+.buttons-wrapper-view-modal > button:nth-child(2) {
+  margin: 0 2rem;
+}
+/* View Task Modal END */

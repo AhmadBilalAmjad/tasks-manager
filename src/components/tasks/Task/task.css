@@ -4,6 +4,7 @@ li.task-list-item {
   border: 1px solid #ccc !important;
   position: relative;
   border-radius: var(--list-border-radius);
+  cursor: pointer;
 }
 
 li.normal-border {
