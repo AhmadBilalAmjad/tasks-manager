@@ -14,3 +14,8 @@ export type TTask = {
   priority: 'high' | 'medium' | 'low';
   isCompleted: boolean;
 };
+
+export type TTaskComponent = {
+  task: TTask;
+  setSelectedTask?: SetStateAction<TTask>;
+};
